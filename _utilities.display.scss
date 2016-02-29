@@ -1,0 +1,129 @@
+//  Display Utility
+
+
+
+
+//  Dependencies:
+//    Settings.Default
+//    Settings.Breakpoint
+
+
+
+
+$iota-utilities-display            : true;
+$iota-utilities-display-table      : false !default;
+$iota-utilities-display--res       : false !default;
+$iota-utilities-display-table--res : false !default;
+
+
+
+
+.#{$iota-utility-namespace}block {
+  display: block !important;
+}
+
+.#{$iota-utility-namespace}hidden {
+  display: none !important;
+}
+
+.#{$iota-utility-namespace}hidden-visually {
+  position: absolute;
+  overflow: hidden;
+  width:  1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
+.#{$iota-utility-namespace}inline {
+  display: inline !important;
+}
+
+.#{$iota-utility-namespace}inline-block {
+  display: inline-block !important;
+}
+
+
+
+
+// Display Table Utilities
+
+@if ($iota-utilities-display-table == true) {
+
+  .#{$iota-utility-namespace}table {
+    display: table !important;
+  }
+
+  .#{$iota-utility-namespace}table-row {
+    display: table-row !important;
+  }
+
+  .#{$iota-utility-namespace}table-cell {
+    display: table-cell !important;
+  }
+
+}
+
+
+
+
+// Responsive Display Utilities
+
+@if ($iota-utilities-display--res == true) {
+
+  @each $name, $size in $iota-breakpoint-sizes {
+
+    @media #{$size} {
+    
+      .#{$iota-utility-namespace}block\@#{$name} {
+        display: block !important;
+      }
+
+      .#{$iota-utility-namespace}hidden\@#{$name} {
+        display: none !important;
+      }
+
+      .#{$iota-utility-namespace}hidden-visually\@#{$name} {
+        position: absolute;
+        overflow: hidden;
+        width:  1px;
+        height: 1px;
+        padding: 0;
+        border: 0;
+        clip: rect(1px, 1px, 1px, 1px) !important;
+      }
+
+      .#{$iota-utility-namespace}inline\@#{$name} {
+        display: inline !important;
+      }
+
+      .#{$iota-utility-namespace}inline-block\@#{$name} {
+        display: inline-block !important;
+      }
+
+
+      // Responsive Display Table Utilities
+
+      @if ($iota-utilities-display-table == true && $iota-utilities-display-table--res == true) {
+
+        .#{$iota-utility-namespace}table\@#{$name} {
+          display: table !important;
+        }
+
+        .#{$iota-utility-namespace}table-row\@#{$name} {
+          display: table-row !important;
+        }
+
+        .#{$iota-utility-namespace}table-cell\@#{$name} {
+          display: table-cell !important;
+        }
+
+      }
+
+
+    }
+
+  }
+  
+}
