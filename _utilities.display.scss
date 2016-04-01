@@ -10,10 +10,10 @@
 
 
 
-$iota-utilities-display            : true;
-$iota-utilities-display-table      : false !default;
-$iota-utilities-display--res       : false !default;
-$iota-utilities-display-table--res : false !default;
+$iota-display            : true;
+$iota-display-table      : false !default;
+$iota-display--res       : false !default;
+$iota-display-table--res : false !default;
 
 
 
@@ -49,7 +49,7 @@ $iota-utilities-display-table--res : false !default;
 
 // Display Table Utilities
 
-@if ($iota-utilities-display-table == true) {
+@if ($iota-display-table == true) {
 
   .#{$iota-utility-namespace}table {
     display: table !important;
@@ -70,7 +70,7 @@ $iota-utilities-display-table--res : false !default;
 
 // Responsive Display Utilities
 
-@if ($iota-utilities-display--res == true) {
+@if ($iota-display--res == true) {
 
   @each $name, $size in $iota-breakpoint-sizes {
 
@@ -105,7 +105,7 @@ $iota-utilities-display-table--res : false !default;
 
       // Responsive Display Table Utilities
 
-      @if ($iota-utilities-display-table == true && $iota-utilities-display-table--res == true) {
+      @if ($iota-display-table == true && $iota-display-table--res == true) {
 
         .#{$iota-utility-namespace}table\@#{$name} {
           display: table !important;

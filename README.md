@@ -19,9 +19,9 @@ npm install --save iotacss-display
 ### Options ###
 
 ```
-$iota-utilities-display-table      : false !default;
-$iota-utilities-display--res       : false !default;
-$iota-utilities-display-table--res : false !default;
+$iota-display-table      : false !default;
+$iota-display--res       : false !default;
+$iota-display-table--res : false !default;
 ```
 
 
