@@ -10,23 +10,26 @@
 
 
 
-$iota-display            : true;
-$iota-display-table      : false !default;
-$iota-display--res       : false !default;
-$iota-display-table--res : false !default;
+$iota-display                           : true;
+$iota-display--res                      : true !default;
+$iota-display-block-namespace           : 'block';
+$iota-display-hidden-namespace          : 'hidden';
+$iota-display-hidden-visually-namespace : 'hidden-visually';
+$iota-display-inline-namespace          : 'inline';
+$iota-display-inline-block-namespace    : 'inline-block';
 
 
 
 
-.#{$iota-utility-namespace}block {
+.#{$iota-utility-namespace}#{$iota-display-block-namespace} {
   display: block !important;
 }
 
-.#{$iota-utility-namespace}hidden {
+.#{$iota-utility-namespace}#{$iota-display-hidden-namespace} {
   display: none !important;
 }
 
-.#{$iota-utility-namespace}hidden-visually {
+.#{$iota-utility-namespace}#{$iota-display-hidden-visually-namespace} {
   position: absolute;
   overflow: hidden;
   width:  1px;
@@ -36,33 +39,12 @@ $iota-display-table--res : false !default;
   clip: rect(1px, 1px, 1px, 1px) !important;
 }
 
-.#{$iota-utility-namespace}inline {
+.#{$iota-utility-namespace}#{$iota-display-inline-namespace} {
   display: inline !important;
 }
 
-.#{$iota-utility-namespace}inline-block {
+.#{$iota-utility-namespace}#{$iota-display-inline-block-namespace} {
   display: inline-block !important;
-}
-
-
-
-
-// Display Table Utilities
-
-@if ($iota-display-table == true) {
-
-  .#{$iota-utility-namespace}table {
-    display: table !important;
-  }
-
-  .#{$iota-utility-namespace}table-row {
-    display: table-row !important;
-  }
-
-  .#{$iota-utility-namespace}table-cell {
-    display: table-cell !important;
-  }
-
 }
 
 
@@ -76,15 +58,15 @@ $iota-display-table--res : false !default;
 
     @media #{$size} {
     
-      .#{$iota-utility-namespace}block\@#{$name} {
+      .#{$iota-utility-namespace}#{$iota-display-block-namespace}\@#{$name} {
         display: block !important;
       }
 
-      .#{$iota-utility-namespace}hidden\@#{$name} {
+      .#{$iota-utility-namespace}#{$iota-display-hidden-namespace}\@#{$name} {
         display: none !important;
       }
 
-      .#{$iota-utility-namespace}hidden-visually\@#{$name} {
+      .#{$iota-utility-namespace}#{$iota-display-hidden-visually-namespace}\@#{$name} {
         position: absolute;
         overflow: hidden;
         width:  1px;
@@ -94,33 +76,13 @@ $iota-display-table--res : false !default;
         clip: rect(1px, 1px, 1px, 1px) !important;
       }
 
-      .#{$iota-utility-namespace}inline\@#{$name} {
+      .#{$iota-utility-namespace}#{$iota-display-inline-namespace}\@#{$name} {
         display: inline !important;
       }
 
-      .#{$iota-utility-namespace}inline-block\@#{$name} {
+      .#{$iota-utility-namespace}#{$iota-display-inline-block-namespace}\@#{$name} {
         display: inline-block !important;
       }
-
-
-      // Responsive Display Table Utilities
-
-      @if ($iota-display-table == true && $iota-display-table--res == true) {
-
-        .#{$iota-utility-namespace}table\@#{$name} {
-          display: table !important;
-        }
-
-        .#{$iota-utility-namespace}table-row\@#{$name} {
-          display: table-row !important;
-        }
-
-        .#{$iota-utility-namespace}table-cell\@#{$name} {
-          display: table-cell !important;
-        }
-
-      }
-
 
     }
 

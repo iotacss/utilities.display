@@ -19,9 +19,12 @@ npm install --save iotacss-display
 ### Options ###
 
 ```
-$iota-display-table      : false !default;
-$iota-display--res       : false !default;
-$iota-display-table--res : false !default;
+$iota-display--res                      : false !default;
+$iota-display-block-namespace           : 'block' !default;
+$iota-display-hidden-namespace          : 'hidden' !default;
+$iota-display-hidden-visually-namespace : 'hidden-visually' !default;
+$iota-display-inline-namespace          : 'inline' !default;
+$iota-display-inline-block-namespace    : 'inline-block' !default;
 ```
 
 
@@ -33,10 +36,6 @@ $iota-display-table--res : false !default;
 .u-hidden-visually
 .u-inline
 .u-inline-block
-
-.u-table
-.u-table-row
-.u-table-cell
 
 
 // Responsive Class Syntax
