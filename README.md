@@ -6,34 +6,29 @@ The display utility contains helper classes for the CSS display property.
 ### Installation ###
 
 ```
-npm install --save iotacss-display
+npm install --save iotacss-utils-display
 ```
-
-
-### Dependencies ###
-
-* [Settings.Default](https://github.com/iotacss/settings.default)
-* [Settings.Breakpoint](https://github.com/iotacss/settings.breakpoint)
 
 
 ### Options ###
 
-```
-$iota-display--res                      : false !default;
-$iota-display-block-namespace           : 'block' !default;
-$iota-display-hidden-namespace          : 'hidden' !default;
-$iota-display-hidden-visually-namespace : 'hidden-visually' !default;
-$iota-display-inline-namespace          : 'inline' !default;
-$iota-display-inline-block-namespace    : 'inline-block' !default;
+```sass
+$iota-utils-display-namespace             : '' !default;
+$iota-utils-display-block-name            : 'block' !default;
+$iota-utils-display-hidden-name           : 'hidden' !default;
+$iota-utils-display-inline-name           : 'inline' !default;
+$iota-utils-display-inline-block-name     : 'inline-block' !default;
+
+$iota-utils-display-res                   : false !default;
+$iota-utils-display-breakpoints           : $iota-global-breakpoints !default;
 ```
 
 
 ### Classes ###
 
-```
+```css
 .u-block
 .u-hidden
-.u-hidden-visually
 .u-inline
 .u-inline-block
 

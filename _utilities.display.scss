@@ -3,84 +3,69 @@
 
 
 
-//  Dependencies:
-//    Settings.Default
-//    Settings.Breakpoint
+$iota-utils-display                       : true;
+
+$iota-utils-display-namespace             : '' !default;
+$iota-utils-display-block-name            : 'block' !default;
+$iota-utils-display-hidden-name           : 'hidden' !default;
+$iota-utils-display-inline-name           : 'inline' !default;
+$iota-utils-display-inline-block-name     : 'inline-block' !default;
+
+$iota-utils-display-res                   : false !default;
+$iota-utils-display-breakpoints           : $iota-global-breakpoints !default;
 
 
 
 
-$iota-display                           : true;
-$iota-display--res                      : false !default;
-$iota-display-block-namespace           : 'block';
-$iota-display-hidden-namespace          : 'hidden';
-$iota-display-hidden-visually-namespace : 'hidden-visually';
-$iota-display-inline-namespace          : 'inline';
-$iota-display-inline-block-namespace    : 'inline-block';
+// Helper Local Variables
+
+$iota-utils-display-var-display: $iota-global-utilities-namespace + $iota-utils-display-namespace;
 
 
 
 
-.#{$iota-utility-namespace}#{$iota-display-block-namespace} {
+// Display Utilities
+
+.#{$iota-utils-display-var-display + $iota-utils-display-block-name} {
   display: block !important;
 }
 
-.#{$iota-utility-namespace}#{$iota-display-hidden-namespace} {
+.#{$iota-utils-display-var-display + $iota-utils-display-hidden-name} {
   display: none !important;
 }
 
-.#{$iota-utility-namespace}#{$iota-display-hidden-visually-namespace} {
-  position: absolute;
-  overflow: hidden;
-  width:  1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-}
-
-.#{$iota-utility-namespace}#{$iota-display-inline-namespace} {
+.#{$iota-utils-display-var-display + $iota-utils-display-inline-name} {
   display: inline !important;
 }
 
-.#{$iota-utility-namespace}#{$iota-display-inline-block-namespace} {
+.#{$iota-utils-display-var-display + $iota-utils-display-inline-block-name} {
   display: inline-block !important;
 }
 
 
 
 
-// Responsive Display Utilities
+// Display Responsive Utilities
 
-@if ($iota-display--res == true) {
+@if ($iota-utils-display-res == true) {
 
-  @each $name, $size in $iota-breakpoint-sizes {
+  @each $breakpoint-name, $breakpoint-size in $iota-utils-display-breakpoints {
 
-    @media #{$size} {
+    @media #{$breakpoint-size} {
     
-      .#{$iota-utility-namespace}#{$iota-display-block-namespace}\@#{$name} {
+      .#{$iota-utils-display-var-display + $iota-utils-display-block-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         display: block !important;
       }
 
-      .#{$iota-utility-namespace}#{$iota-display-hidden-namespace}\@#{$name} {
+      .#{$iota-utils-display-var-display + $iota-utils-display-hidden-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         display: none !important;
       }
 
-      .#{$iota-utility-namespace}#{$iota-display-hidden-visually-namespace}\@#{$name} {
-        position: absolute;
-        overflow: hidden;
-        width:  1px;
-        height: 1px;
-        padding: 0;
-        border: 0;
-        clip: rect(1px, 1px, 1px, 1px) !important;
-      }
-
-      .#{$iota-utility-namespace}#{$iota-display-inline-namespace}\@#{$name} {
+      .#{$iota-utils-display-var-display + $iota-utils-display-inline-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         display: inline !important;
       }
 
-      .#{$iota-utility-namespace}#{$iota-display-inline-block-namespace}\@#{$name} {
+      .#{$iota-utils-display-var-display + $iota-utils-display-inline-block-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         display: inline-block !important;
       }
 

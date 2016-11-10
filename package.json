@@ -1,6 +1,6 @@
 {
-  "name": "iotacss-display",
-  "version": "0.1.2",
+  "name": "iotacss-utils-display",
+  "version": "1.0.0",
   "description": "Display utility for iotaCSS",
   "main": "_utilities.display.scss",
   "repository": {
@@ -10,12 +10,9 @@
   "keywords": [
     "iotacss",
     "css",
+    "sass",
     "bem",
     "oocss"
   ],
-  "dependencies": {
-    "iotacss-default": "0.1.0",
-    "iotacss-breakpoint": "0.1.0"
-  },
   "author": "Dimitris Psaropoulos <info@harby.me>"
 }
