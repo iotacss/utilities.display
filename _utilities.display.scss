@@ -6,6 +6,7 @@
 $iota-utils-display                       : true;
 
 $iota-utils-display-namespace             : '' !default;
+$iota-utils-display-flex-name             : 'flex' !default;
 $iota-utils-display-block-name            : 'block' !default;
 $iota-utils-display-hidden-name           : 'hidden' !default;
 $iota-utils-display-inline-name           : 'inline' !default;
@@ -25,6 +26,10 @@ $iota-utils-display-var-display: $iota-global-utilities-namespace + $iota-utils-
 
 
 // Display Utilities
+
+.#{$iota-utils-display-var-display + $iota-utils-display-flex-name} {
+  display: flex !important;
+}
 
 .#{$iota-utils-display-var-display + $iota-utils-display-block-name} {
   display: block !important;
@@ -52,6 +57,10 @@ $iota-utils-display-var-display: $iota-global-utilities-namespace + $iota-utils-
   @each $breakpoint-name, $breakpoint-size in $iota-utils-display-breakpoints {
 
     @media #{$breakpoint-size} {
+
+      .#{$iota-utils-display-var-display + $iota-utils-display-flex-name + $iota-global-breakpoint-separator + $breakpoint-name} {
+        display: flex !important;
+      }
     
       .#{$iota-utils-display-var-display + $iota-utils-display-block-name + $iota-global-breakpoint-separator + $breakpoint-name} {
         display: block !important;
