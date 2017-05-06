@@ -1,6 +1,6 @@
 {
   "name": "iotacss-utils-display",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Display utility for iotaCSS",
   "main": "_utilities.display.scss",
   "repository": {
